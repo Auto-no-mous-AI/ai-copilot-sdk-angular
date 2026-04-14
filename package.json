@@ -20,7 +20,7 @@
     }
   },
   "scripts": {
-    "build": "node ./node_modules/tsup/dist/cli-default.js src/index.ts --format esm,cjs --clean",
+    "build": "node ./node_modules/tsup/dist/cli-default.js src/index.ts --format esm,cjs --external @auto-no-mous/copilot-web --clean",
     "lint": "tsc --noEmit",
     "test": "npm run build"
   },
@@ -34,10 +34,8 @@
   "license": "MIT",
   "peerDependencies": {
     "@angular/core": ">=17",
-    "@angular/common": ">=17"
-  },
-  "dependencies": {
-    "@auto-no-mous/copilot-web": "file:../ai-copilot-sdk"
+    "@angular/common": ">=17",
+    "@auto-no-mous/copilot-web": ">=0.1.0"
   },
   "devDependencies": {
     "@angular/common": "^20.3.0",

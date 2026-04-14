@@ -12,5 +12,5 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": false
   },
-  "include": ["src/**/*.ts", "example-app/**/*.ts"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "example-app/**/*.ts"]
 }

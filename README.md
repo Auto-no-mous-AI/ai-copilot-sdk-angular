@@ -1,4 +1,7 @@
 # @auto-no-mous/copilot-angular
+[![CI](https://github.com/Auto-no-mous-AI/ai-copilot-sdk-angular/actions/workflows/ci.yml/badge.svg)](https://github.com/Auto-no-mous-AI/ai-copilot-sdk-angular/actions/workflows/ci.yml) [![Release](https://github.com/Auto-no-mous-AI/ai-copilot-sdk-angular/actions/workflows/release.yml/badge.svg)](https://github.com/Auto-no-mous-AI/ai-copilot-sdk-angular/actions/workflows/release.yml)
+
+
 
 Angular wrapper around the standalone AI Copilot web SDK.
 
@@ -31,3 +34,9 @@ bootstrapApplication(AppComponent, {
 ```
 
 To mount the widget, inject `CopilotEmbedService` or `CopilotAutoInitService` and call `init()` / `mount()`.
+
+## CI And Release
+
+- Manual CI trigger is available through the CI workflow in GitHub Actions.
+- Release instructions live in [docs/releasing.md](./docs/releasing.md).
+
