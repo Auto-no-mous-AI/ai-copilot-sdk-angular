@@ -1,23 +1,33 @@
-# AI Copilot Angular SDK
+# @auto-no-mous/copilot-angular
 
-Angular wrapper library for the core AI Copilot SDK.
+Angular wrapper around the standalone AI Copilot web SDK.
 
-## Repository scaffold
-- projects/copilot-angular/src/lib
-- projects/copilot-angular/src/public-api
-- example-app/src
-- docs
+## Install
 
-## Status
-Scaffolded with baseline files:
-- .editorconfig
-- .gitignore
-- CONTRIBUTING.md
-- .github/CODEOWNERS
-- .github/pull_request_template.md
-- .github/workflows/ci.yml
+```bash
+npm install @auto-no-mous/copilot-angular @auto-no-mous/copilot-web
+```
 
-## Next steps
-1. Initialize project tooling (Angular/NestJS/package setup).
-2. Add lint, test, and build scripts in package.json.
-3. Expand CI with repository-specific jobs.
+## Usage
+
+```ts
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
+import { provideCopilot } from '@auto-no-mous/copilot-angular';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    ...provideCopilot({
+      appId: 'app_123',
+      environment: 'prod',
+      apiBaseUrl: 'https://api.yourcopilot.ai/api',
+      getToken: async () => {
+        const response = await fetch('/api/copilot/install-token');
+        return response.text();
+      }
+    })
+  ]
+});
+```
+
+To mount the widget, inject `CopilotEmbedService` or `CopilotAutoInitService` and call `init()` / `mount()`.

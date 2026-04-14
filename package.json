@@ -1,0 +1,52 @@
+{
+  "name": "@auto-no-mous/copilot-angular",
+  "version": "0.1.0",
+  "description": "Angular wrapper for the AI Copilot web SDK",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "dist",
+    "src/index.d.ts",
+    "README.md",
+    "docs"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "node ./node_modules/tsup/dist/cli-default.js src/index.ts --format esm,cjs --clean",
+    "lint": "tsc --noEmit",
+    "test": "npm run build"
+  },
+  "keywords": [
+    "copilot",
+    "angular",
+    "widget",
+    "sdk"
+  ],
+  "author": "Auto-no-mous AI",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/core": ">=17",
+    "@angular/common": ">=17"
+  },
+  "dependencies": {
+    "@auto-no-mous/copilot-web": "file:../ai-copilot-sdk"
+  },
+  "devDependencies": {
+    "@angular/common": "^20.3.0",
+    "@angular/core": "^20.3.0",
+    "tslib": "^2.8.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
