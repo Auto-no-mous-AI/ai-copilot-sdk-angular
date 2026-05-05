@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@angular/common": "^20.3.0",
-    "@angular/core": "^20.3.0",
+    "@angular/core": "^21.2.11",
     "tslib": "^2.8.1",
     "tsup": "^8.5.0",
     "typescript": "^5.8.3"
